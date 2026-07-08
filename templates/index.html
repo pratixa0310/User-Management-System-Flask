@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>👨‍💼 User Management System</h1>
+
+        <p class="subtitle">
+            Python Flask + SQLite CRUD Application
+        </p>
+
+        <!-- Add User Form -->
+        <div class="card">
+
+            <form method="POST">
+
+                <div class="input-group">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+                <button type="submit">
+                    Add User
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- Search Form -->
+        <div class="table-card">
+
+            <form method="GET">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="🔍 Search by name or email..."
+                    value="{{ request.args.get('search','') }}">
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <h2>Registered Users</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% if users %}
+
+                        {% for user in users %}
+
+                        <tr>
+
+                            <td>{{ user.id }}</td>
+
+                            <td>{{ user.name }}</td>
+
+                            <td>{{ user.email }}</td>
+
+                            <td>
+
+                                <a
+                                    href="/edit/{{ user.id }}"
+                                    class="edit-btn">
+                                    Edit
+                                </a>
+
+                                <a
+                                    href="/delete/{{ user.id }}"
+                                    class="delete-btn"
+                                    onclick="return confirm('Are you sure you want to delete this user?')">
+
+                                    Delete
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <tr>
+
+                            <td colspan="4">
+
+                                No users found.
+
+                            </td>
+
+                        </tr>
+
+                    {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <footer>
+
+            Made with ❤️ by <strong>Pratiksha Khandare</strong><br>
+            Python Full Stack Internship Project
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #dbeafe;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.card,
+.table-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 8px rgba(37,99,235,0.3);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+.table-card form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.table-card form input {
+    flex: 1;
+}
+
+.table-card form button {
+    width: 150px;
+}
+
+h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+table th {
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+}
+
+table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+table tr:hover {
+    background: #dbeafe;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    margin: 3px;
+}
+
+.edit-btn {
+    background: #16a34a;
+}
+
+.edit-btn:hover {
+    background: #15803d;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    margin: 30px 0;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .table-card form {
+        flex-direction: column;
+    }
+
+    .table-card form button {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        display: block;
+        margin: 5px auto;
+        width: 80px;
+    }
+}
